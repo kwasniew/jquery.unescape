@@ -1,6 +1,9 @@
 (function ($) {
     $.fn.unescape = function () {
-        var temp = $('<div />');
-        return $(this).html(temp.html($(this).html()).text());
+        $(this).each(function() {
+           var temp = $('<div />');
+           $(this).html(temp.html($(this).html()).text()); 
+        });         
+        return this;
     }
 })(jQuery);
